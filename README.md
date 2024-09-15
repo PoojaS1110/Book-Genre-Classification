@@ -1,38 +1,36 @@
 # Book Genre Classification
 
-## Application of Logistic Regression for Genre Classification of Books
+## Application of Multinomial Naive Bayes for Genre Classification of Books
 
 ### Summary
-
-In this project, a genre classification model was built to predict the genre of a book based on its title, author, and description. The objective was to classify books into various genres using features from their metadata. The project involved data cleaning, text preprocessing, feature extraction, and model training, culminating in genre prediction and evaluation.
+In this project, a genre classification model was built to predict the genre of a book based on its description. The project included data preparation, text feature extraction, model training, and evaluation, as well as visualizations of book ratings.
 
 ### Methodology
 
-**Data Cleaning and Preprocessing**:
-- **Text Cleaning**: Removed non-alphabetical characters, converted text to lowercase, and trimmed extra spaces from titles, authors, and descriptions.
-- **Missing Values**: Handled missing values and removed duplicate entries to ensure data quality.
+1. **Data Preparation**:
+   - **Missing Values**: Dropped rows with missing descriptions and genres.
+   - **Sampling**: Randomly sampled 10% of the dataset for analysis.
 
-**Feature Extraction**:
-- **TF-IDF Vectorization**: Converted the text data (title and description) into numerical features using TF-IDF (Term Frequency-Inverse Document Frequency).
+2. **Feature Extraction**:
+   - **Text Vectorization**: Converted text descriptions into numerical features using `CountVectorizer` with a limit of 500 features.
 
-**Model Training and Evaluation**:
-- **Data Splitting**: Divided the dataset into training and testing sets.
-- **Classifier**: Trained a Logistic Regression model on the training data.
-- **Prediction and Evaluation**: Evaluated the model's performance using metrics such as accuracy, precision, recall, and F1-score.
+3. **Model Training and Evaluation**:
+   - **Data Splitting**: Divided the dataset into training and testing sets.
+   - **Classifier**: Trained a `MultinomialNB` model on the training data.
+   - **Prediction and Evaluation**: Evaluated the model's performance using accuracy and classification report metrics.
+
+4. **Visualizations**:
+   - **Histogram**: Plotted the distribution of book ratings.
+   - **Scatter Plot**: Displayed ratings vs. number of ratings.
 
 ### Skills Used
-
-- **Data Cleaning and Preprocessing**: Techniques for preparing text data for analysis.
-- **Feature Extraction and Vectorization**: Methods for transforming text data into numerical features using TF-IDF.
-- **Machine Learning Algorithms**: Application of Logistic Regression for classification tasks.
-- **Model Evaluation Metrics**: Utilized accuracy, precision, recall, and F1-score to assess model performance.
-- **Data Handling with Pandas**: Efficient manipulation and analysis of dataset.
+- **Data Handling**: Efficient manipulation and sampling of datasets using Pandas.
+- **Feature Extraction and Vectorization**: Transforming text data into numerical features using `CountVectorizer`.
+- **Machine Learning Algorithms**: Application of `MultinomialNB` for classification tasks.
+- **Model Evaluation Metrics**: Assessment of model performance using accuracy and classification report.
+- **Data Visualization**: Creating histograms and scatter plots using Matplotlib.
 
 ### Results
-
-The project resulted in a CSV file named `test_with_predictions.csv`, which includes:
-- **Original Book Data**: Titles, authors, and descriptions of books from the dataset.
-- **Predicted Genre Classifications**: The genre predicted by the model based on the book's title and description.
-
-The results demonstrated the effectiveness of text preprocessing and classification techniques in predicting book genres and provided practical insights into the application of machine learning algorithms for text-based classification tasks.
-
+The project results include:
+- **Model Performance**: Accuracy and classification report metrics.
+- **Visualizations**: Distribution of book ratings and scatter plot of ratings vs. number of ratings.
