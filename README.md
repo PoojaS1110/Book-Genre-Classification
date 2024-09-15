@@ -1,36 +1,33 @@
-# Book Genre Classification
+# Book Rating Prediction
 
-## Application of Multinomial Naive Bayes for Genre Classification of Books
+## Application of Linear Regression for Predicting Book Ratings
 
 ### Summary
-In this project, a genre classification model was built to predict the genre of a book based on its description. The project included data preparation, text feature extraction, model training, and evaluation, as well as visualizations of book ratings.
+
+In this project, a model was developed to predict the average rating of a book based on its description. The project includes data preparation, text feature extraction, model training using linear regression, and evaluation of the model's performance.
 
 ### Methodology
 
-1. **Data Preparation**:
-   - **Missing Values**: Dropped rows with missing descriptions and genres.
-   - **Sampling**: Randomly sampled 10% of the dataset for analysis.
+#### Data Preparation
+- **Missing Values**: Dropped rows with missing descriptions or ratings.
+- **Sampling**: Used the complete dataset for analysis without additional sampling.
 
-2. **Feature Extraction**:
-   - **Text Vectorization**: Converted text descriptions into numerical features using `CountVectorizer` with a limit of 500 features.
+#### Feature Extraction
+- **Text Vectorization**: Converted book descriptions into numerical features using `CountVectorizer` with a limit of 1000 features.
 
-3. **Model Training and Evaluation**:
-   - **Data Splitting**: Divided the dataset into training and testing sets.
-   - **Classifier**: Trained a `MultinomialNB` model on the training data.
-   - **Prediction and Evaluation**: Evaluated the model's performance using accuracy and classification report metrics.
-
-4. **Visualizations**:
-   - **Histogram**: Plotted the distribution of book ratings.
-   - **Scatter Plot**: Displayed ratings vs. number of ratings.
+#### Model Training and Evaluation
+- **Data Splitting**: Divided the dataset into training and testing sets (30% for testing).
+- **Model**: Trained a `LinearRegression` model on the training data.
+- **Prediction and Evaluation**: Evaluated the model's performance using Mean Squared Error (MSE) and R^2 Score.
 
 ### Skills Used
-- **Data Handling**: Efficient manipulation and sampling of datasets using Pandas.
+- **Data Handling**: Efficient manipulation of datasets using Pandas.
 - **Feature Extraction and Vectorization**: Transforming text data into numerical features using `CountVectorizer`.
-- **Machine Learning Algorithms**: Application of `MultinomialNB` for classification tasks.
-- **Model Evaluation Metrics**: Assessment of model performance using accuracy and classification report.
-- **Data Visualization**: Creating histograms and scatter plots using Matplotlib.
+- **Machine Learning Algorithms**: Application of `LinearRegression` for regression tasks.
+- **Model Evaluation Metrics**: Assessment of model performance using MSE and R^2 Score.
 
 ### Results
+
 The project results include:
-- **Model Performance**: Accuracy and classification report metrics.
-- **Visualizations**: Distribution of book ratings and scatter plot of ratings vs. number of ratings.
+- **Model Performance**: Evaluation metrics such as Mean Squared Error and R^2 Score, which measure the accuracy of the rating predictions.
+
